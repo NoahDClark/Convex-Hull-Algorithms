@@ -185,7 +185,7 @@ canvas = FigureCanvasTkAgg(fig, master = window)
 labelOne = Label(window, text="Current point list: ", font=("Times",14)).place(x=200,y=50)
 labelTwo = Label(window, text="Points in convex hull: ", font=("Times",14)).place(x=700,y=50)
 labelThree = Label(window, text="The order of points \n for quickHull Solution: ", font=("Times",14)).place(x=850,y=300)
-labelFour = Label(window, text="Note: Lines drawn by \n quickHull are meant to \n demonstrate how it recursively \n solves the convex Hull problem.\n QuickHull outputs the array in \n counter clockwise order.", font=("Times",14)).place(x=850,y=600)
+labelFour = Label(window, text="Note: Lines drawn by \n quickHull are meant to \n demonstrate how it recursively \n solves the convex Hull problem.\n Brute force will output the array in \n counter clockwise order.", font=("Times",14)).place(x=850,y=600)
 
 canvas.draw()
 canvas.get_tk_widget().place(x=300,y=200)
