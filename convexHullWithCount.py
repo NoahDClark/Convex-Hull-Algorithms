@@ -222,7 +222,7 @@ def plotPoints():
     string = "Current point list: "
     for i in range(20):
         if(i%5 == 0):
-            string = string + " \n"
+            string = string + "       \n"
         string = string + str(twoDPoints[i])
     labelOne = Label(window, text=string, font=("Times",14)).place(x=200,y=50)
     labelTwo = Label(window, text="Points in convex hull: UNKNOWN            \n\n\n", font=("Times",14)).place(x=700,y=50)
@@ -256,7 +256,7 @@ def plotConvexHull():
     string = "Points in convex hull: "
     for i in range(len(output)):
         if(i%5 == 0):
-            string = string + " \n"
+            string = string + "         \n"
         string = string + str(output[i])
     string = string + "\n COUNT:"
     string = string + str(count)
@@ -289,7 +289,7 @@ def solveWithQuickHull():
     string = "The order of points \n for quickHull Solution: "
     for i in range(len(output)):
         if(i%5 == 0):
-            string = string + " \n"
+            string = string + "           \n"
         string = string + str(output[i])
     
     string = string + "\n COUNT:"
