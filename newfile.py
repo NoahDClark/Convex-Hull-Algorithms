@@ -201,38 +201,6 @@ newTemp = temp(tempArray)
 #Set the geometry of tkinter frame
 window.geometry("1200x800")
 
-def plotConvexHull():
-    fig = Figure(figsize = (5, 5),dpi = 100)
-    plot1 = fig.add_subplot(111)
-    plot1.spines[["left", "bottom"]].set_position(("data", 0))
-    plot1.spines[["top", "right"]].set_visible(False)
-    points = newTemp.tempArray
-    print(points)
-    
-    data = np.array(points)
-    x,y = data.T
-    plot1.scatter(x, y)
-    output = convexHull(points, len(points))
-    
-    string = "Points in convex hull: "
-    for i in range(len(output)):
-        if(i%5 == 0):
-            string = string + " \n"
-        string = string + str(output[i])
-    
-    labelTwo = Label(window, text=string, font=("Times",14)).place(x=700,y=50)
-    
-    output.append(output[0])
-    data2 = np.array(output)
-    x2, y2 = data2.T
-    # the figure that will contain the plot
-  
-    plot1.plot(x2, y2)
-    canvas = FigureCanvasTkAgg(fig, master = window)  
-    # creating the Tkinter canvas
-    # placing the toolbar on the Tkinter window
-    canvas.get_tk_widget().place(x=300,y=200)
-    
 def plotPoints():
     points = []
     for i in range(20):
@@ -264,7 +232,39 @@ def plotPoints():
     # creating the Tkinter canvas
     # placing the toolbar on the Tkinter window
     canvas.get_tk_widget().place(x=300,y=200)
+
+def plotConvexHull():
+    fig = Figure(figsize = (5, 5),dpi = 100)
+    plot1 = fig.add_subplot(111)
+    plot1.spines[["left", "bottom"]].set_position(("data", 0))
+    plot1.spines[["top", "right"]].set_visible(False)
+    points = newTemp.tempArray
+    print(points)
     
+    data = np.array(points)
+    x,y = data.T
+    plot1.scatter(x, y)
+    output = convexHull(points, len(points))
+    
+    string = "Points in convex hull: "
+    for i in range(len(output)):
+        if(i%5 == 0):
+            string = string + " \n"
+        string = string + str(output[i])
+    
+    labelTwo = Label(window, text=string, font=("Times",14)).place(x=700,y=50)
+    
+    output.append(output[0])
+    data2 = np.array(output)
+    x2, y2 = data2.T
+    # the figure that will contain the plot
+  
+    plot1.plot(x2, y2)
+    canvas = FigureCanvasTkAgg(fig, master = window)  
+    # creating the Tkinter canvas
+    # placing the toolbar on the Tkinter window
+    canvas.get_tk_widget().place(x=300,y=200)
+
 def solveWithQuickHull():
     fig = Figure(figsize = (5, 5),dpi = 100)
     plot1 = fig.add_subplot(111)
