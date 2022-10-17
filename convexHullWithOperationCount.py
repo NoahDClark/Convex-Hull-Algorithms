@@ -157,6 +157,7 @@ def quickHull(in_list, size):
     result_list = to2DList(convexHull)
     return result_list, count
 
+#Brute force algorithm
 def convexHull(point_list, size):
     #Minimum size 3 uses helper methods to create result list in counter clockwise order starting from leftmost point
     in_list = toPointList(point_list)
